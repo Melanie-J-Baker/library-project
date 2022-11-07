@@ -8,15 +8,17 @@ let myLibrary = [{
         "author": 'Victor Pelevin',
         "pages": 250,
         "read": false
-    }
-];
+    }];
+
 let newBook;
 
-function Book (title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
+class Book {
+    constructor(title, author, pages,read) {
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+    }
 }
 
 function addBookToLibrary() {
@@ -65,6 +67,28 @@ function createBookCard(item) {
     } else {
         readButton.textContent = 'Read';
     }
+    readButton.addEventListener('click', () => {
+        item.read = !item.read;
+        //setStorage();
+        displayBooks();
+    })
+
+    const removeButton = document.createElement('button');
+    removeButton.textContent = "Remove";
+    removeButton.setAttribute('id', 'removeButton');
+    bookBox.appendChild(removeButton);
+    removeButton.addEventListener('click', () => {
+        myLibrary.splice(myLibrary.indexOf(item), 1);
+        //setStorage();
+        displayBooks();
+    });
+    
 
     bookDisplay.appendChild(bookBox);
 }
+
+//function createVisual() {}
+
+//function setStorage() {}
+
+displayBooks();
