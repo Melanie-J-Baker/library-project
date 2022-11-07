@@ -1,35 +1,32 @@
-let myLibrary = [{
-        "title": 'K-PAX',
-        "author": 'Gene Brewer',
-        "pages": 500,
-        "read": true
-    },{
-        "title": 'Omon Ra',
-        "author": 'Victor Pelevin',
-        "pages": 250,
-        "read": false
-    }];
+let myLibrary = [];
 
 let newBook;
 
 const newButton = document.querySelector('#newButton');
 newButton.addEventListener('click', () => popup.style.display = 'block');
 
+const addButton = document.querySelector('#addButton');
+addButton.addEventListener('click', addBookToLibrary);
+
+const popup = document.getElementById('popup');
+const close = document.getElementById('close');
+close.addEventListener('click', () => popup.style.display = 'none');
+
 class Book {
     constructor(title, author, pages,read) {
-        this.title = title
-        this.author = author
-        this.pages = pages
-        this.read = read
+        this.title = form.title.value;
+        this.author = form.author.value;
+        this.pages = form.pages.value;
+        this.read = form.read.checked;
     }
 }
 
-function addBookToLibrary() {
-    //event.preventDefault()
-    //popup.style.display = 'none';
+function addBookToLibrary(event) {
+    event.preventDefault()
+    popup.style.display = 'none';
     newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
-    //setStorage();
+    setStorage();
     displayBooks();
     form.reset();
 }
@@ -71,12 +68,14 @@ function createBookCard(item) {
     bookBox.appendChild(readButton);
     if (item.read === false) {
         readButton.textContent = "Not read";
+        readButton.style.backgroundColor = "rgb(110, 49, 6)";
     } else {
         readButton.textContent = 'Read';
+        readButton.style.backgroundColor = "darkolivegreen";
     }
     readButton.addEventListener('click', () => {
         item.read = !item.read;
-        //setStorage();
+        setStorage();
         displayBooks();
     })
 
@@ -86,16 +85,26 @@ function createBookCard(item) {
     bookBox.appendChild(removeButton);
     removeButton.addEventListener('click', () => {
         myLibrary.splice(myLibrary.indexOf(item), 1);
-        //setStorage();
+        setStorage();
         displayBooks();
     });
     
-
     bookDisplay.appendChild(bookBox);
 }
 
-//function createVisual() {}
+function setStorage() {
+    localStorage.setItem(`myLibrary`, JSON.stringify(myLibrary));
+}
 
-//function setStorage() {}
+function refresh() {
+    if(!localStorage.myLibrary) {
+        displayBooks();
+    } else {
+        let items = localStorage.getItem('myLibrary')
+        items = JSON.parse(objects);
+        myLibrary = objects;
+        displayBooks();
+    }
+}
 
-displayBooks();
+refresh();
