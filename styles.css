@@ -1,0 +1,109 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0px 5px 5px #999999;
+    width: 100vw;
+    background-image: linear-gradient(to bottom right, darkolivegreen, rgb(110, 49, 6));
+    color: antiquewhite;
+}
+
+#main {
+    width: 100vw;
+    background-image: url(images/janko-ferlic-sfL_QOnmy00-unsplash.jpg);
+    background-size: cover;
+}
+
+button {
+    color: white;
+    background-color: darkolivegreen;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    font-size: 1rem;
+}
+
+#newButtonDiv {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100vw;
+    margin: 10px;
+}
+
+#newButton {
+    border: 0.5px solid black;
+}
+
+#bookDisplay {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 300px;
+    width: 250px;
+    margin: 20px;
+    background-color: antiquewhite;
+    opacity: 0.9;
+    font-size: 1.2rem;
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 20%;
+    background-color: beige;
+    border: 2px solid black;
+    height: 300px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px;
+}
+
+.close {
+    align-self: end;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+legend {
+    align-self: center;
+    font-weight: bold;
+}
+
+label {
+    padding: 5px;
+}
+
+input {
+    padding: 5px;
+}
+
+#addButton {
+    margin-top: 5px;
+    padding: 5px;
+}
+
+#read {
+    padding: 5px;
+}
+
+#read:checked {
+    accent-color: darkolivegreen;
+}

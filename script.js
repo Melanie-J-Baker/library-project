@@ -12,6 +12,9 @@ let myLibrary = [{
 
 let newBook;
 
+const newButton = document.querySelector('#newButton');
+newButton.addEventListener('click', () => popup.style.display = 'block');
+
 class Book {
     constructor(title, author, pages,read) {
         this.title = title
@@ -22,9 +25,13 @@ class Book {
 }
 
 function addBookToLibrary() {
+    //event.preventDefault()
+    //popup.style.display = 'none';
     newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
-
+    //setStorage();
+    displayBooks();
+    form.reset();
 }
 
 function displayBooks() {
@@ -45,17 +52,17 @@ function createBookCard(item) {
     bookBox.setAttribute('id', myLibrary.indexOf(item));
 
     const titleBox = document.createElement('div');
-    titleBox.textContent = item.title;
+    titleBox.textContent = "Title: " + item.title;
     titleBox.classList.add('title');
     bookBox.appendChild(titleBox);
 
     const authorBox = document.createElement('div');
-    authorBox.textContent = item.author;
+    authorBox.textContent = "Author: " + item.author;
     authorBox.classList.add('author');
     bookBox.appendChild(authorBox);
 
     const pagesBox = document.createElement('div');
-    pagesBox.textContent = item.pages;
+    pagesBox.textContent = "Pages: " + item.pages;
     pagesBox.classList.add('pages');
     bookBox.appendChild(pagesBox);
 
