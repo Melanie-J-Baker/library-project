@@ -1,7 +1,12 @@
+@font-face {
+    font-family: myFont;
+    src: url(1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvoooCPNLA3JC9c.ttf);
+}
+
 h1 {
     display: flex;
     justify-content: center;
-    padding: 10px;
+    padding: 20px;
     box-shadow: 0px 5px 5px #999999;
     width: 100vw;
     background-image: linear-gradient(to bottom right, darkolivegreen, rgb(110, 49, 6));
@@ -12,6 +17,7 @@ h1 {
     width: 100vw;
     background-image: url(images/janko-ferlic-sfL_QOnmy00-unsplash.jpg);
     background-size: cover;
+    font-family: myFont, sans-serif;
 }
 
 button {
@@ -20,7 +26,9 @@ button {
     border: none;
     border-radius: 5px;
     padding: 5px 20px;
+    margin: 10px;
     font-size: 1rem;
+    font-family: myFont, sans-serif;
 }
 
 #newButtonDiv {
