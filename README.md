@@ -1,4 +1,7 @@
-Library project from the Odin Project Intermediate JavaScript course
+# Library project 
+From the Odin Project Intermediate JavaScript course
+
+https://melanie-j-baker.github.io/Library-Project/
 
 ![image](https://github.com/Melanie-J-Baker/Library-Project/assets/104843873/2d02d8e8-7515-4362-a7aa-4d184ceb2ced)
 ![image](https://github.com/Melanie-J-Baker/Library-Project/assets/104843873/38e950ef-664d-4a58-b79a-ccaf904b21f9)
