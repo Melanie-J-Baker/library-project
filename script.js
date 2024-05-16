@@ -6,7 +6,6 @@ const newButton = document.querySelector("#newButton");
 newButton.addEventListener("click", () => (popup.style.display = "block"));
 
 const popup = document.getElementById("popup");
-const close = document.getElementById("close");
 close.addEventListener("click", () => (popup.style.display = "none"));
 
 class Book {
