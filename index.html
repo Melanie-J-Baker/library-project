@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
 </head>
 <body>
     <div id="main">
@@ -16,17 +17,18 @@
             <form id="form" action="script.js">
                 <div id="close">&times;</div>
                 <legend>Add New Book</legend>
-                <label for="title">Title</label>
-                <input type="text" name="title" id="title" placeholder="Title">
-                <label for="author">Author</label>
-                <input type="text" name="author" id="author" placeholder="Author">
+                <label for="title">Title *</label>
+                <input type="text" name="title" id="title" placeholder="Title" maxlength="2000" required />
+                <label for="author">Author *</label>
+                <input type="text" name="author" id="author" placeholder="Author" maxlength="100" required />
                 <label for="pages">Pages</label>
-                <input type="tel" name="pages" id="pages" placeholder="Number of pages">
-                <label for="read">Read? <input type="checkbox" id="read" name="read" value="yes"></label>
+                <input type="tel" name="pages" id="pages" placeholder="Number of pages"/>
+                <label for="read">Read? <input type="checkbox" id="read" name="read" value="yes"/></label>
                 <button type="submit" form="form" id="addButton">Add Book</button>
             </form>
+            <p class="required">* = required</p>
         </div>
     </div>
-    <script src="script.js"></script>
+
 </body>
 </html>

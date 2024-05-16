@@ -84,10 +84,14 @@ button:hover {
     top: 20%;
     background-color: beige;
     border: 2px solid black;
-    height: 300px;
-    width: 250px;
+    height: 400px;
+    width: 300px;
     border-radius: 10px;
-    overflow: auto;
+    overflow: none;
+}
+.required {
+    text-align: center;
+    font-size: 1.2rem;
 }
 
 #form {
@@ -117,14 +121,11 @@ label {
 
 input {
     padding: 5px;
+    width: 240px;
 }
 
 #addButton {
     margin-top: 5px;
-    padding: 5px;
-}
-
-#read {
     padding: 5px;
 }
 
